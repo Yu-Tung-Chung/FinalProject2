@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>維也納幼兒園</title>
+	    <!-- ST1 line8~19 -->
+	<style type="text/css">
+		*{ /*所有div+"*"內的CSS*/
+			margin: 0; /*元素的邊距*/
+			padding: 0;/*元素的填充是其內容和邊界之間的空間。*/
+			box-sizing: border-box; /*定義元素的寬度和高度的計算方式：它們是否應包含填充和邊框*//*寬度和高度屬性（以及最小/最大屬性）包括內容，填充和邊框*/
+			outline: none;/*元素周圍繪製的線，以使元素“突出”*/
+		}
+		body{
+			overflow-x: hidden;
+			font-family: 'sans-serif';/*元素的字體*//*https://www.w3schools.com/cssref/pr_font_font-family.asp*/
+			background-color:#E6E6FA;
+		}
+    /* ST5 設定ST3的樣式 line21~69 */
+		.topbar{
+			display: flex;/*創建不同的屏幕尺寸/設備不同的佈局具有彈性，看什麼顯示就佈滿什麼*//*https://wcc723.github.io/css/2017/07/21/css-flex/*/
+			justify-content: space-between;
+			width: 100%;
+			background-color:	#87CEEB;
+			color: #fff;
+			padding: 6px;
+			font-size: 12px;/*字體大小*/
+			text-align: center; /*文字對齊模式*/
+		}
+		header nav{
+			position: absolute;/*元素的定位方法*//*https://www.w3schools.com/cssref/pr_class_position.asp*/
+			top: 50px;
+			left: 0;
+			right: 0;
+			z-index: 99;/*元素的堆棧順序*//*https://www.w3schools.com/cssref/pr_pos_z-index.asp*/
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 1140px;
+			margin: auto;
+			/* transition: all ease 0.5s; */
+		}
+
+		header ul,
+		header .logo{
+			width: 33%;
+			text-align: center;
+		}
+		/* header .logo{
+			text-align: center;
+		} */
+		header ul li{
+			list-style: none;
+			display: inline-block;/*顯示的元素作為一個行內塊的容器。 元素本身被格式化為嵌入式元素，但是您可以應用高度和寬度值*/
+		}
+		header ul li a{
+			text-decoration: none;
+			color: #fff;
+			font-size: 16px;
+			font-weight: 300;
+			margin: 0 20px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		/* 滑鼠觸發 */
+		header li a:hover{
+		color:#000;
+		}
+            /* ST5 設定ST4的文字樣式 line66~104 */
+		.banner{
+			position: relative;
+			height: 850px;
+			background: url(/img/school.jpeg) no-repeat;
+			background-size: cover;
+		}
+		.banner-text{
+			position: relative;
+			text-align: center;
+			padding-top: 300px;
+			/* columns: black; */
+			z-index: 9;
+		}
+		.banner-text h1{
+			font-size: 36px;
+			font-weight: 400;
+		}
+		.banner-text h6{
+			font-size: 16px;
+			font-weight: 400;
+			letter-spacing: 6px;
+			margin-bottom: 10px;
+		}
+		/* .scrolldown{
+			display: block;
+			margin-top: 220px;
+		} */
+
+		.slide-thumb{
+			position: absolute;
+			top: 170px;
+			right: 135px;
+			z-index: 1;
+		}
+		   /* ST7 設定ST6的樣式 */
+		.intro-slide{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #ffffff30;
+			z-index: 99;
+		}
+    /* ST9 ST8的移動位置 */
+		header.sticky nav{
+			position: fixed;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+<!-- ST6 套一層背景顏色在圖片上(類似浮水印的感覺) -->
+<div class="intro-slide"></div>
+<!-- ST3 navbar -->
+<div class="wrapper">
+	<header>
+		<div class="topbar">
+			<p>即日起開始報名</p>
+			<p>即日起開始報名</p>
+			<p>即日起開始報名</p>
+			<p>即日起開始報名</p>
+		</div>
+		<nav>
+			<ul class="left">
+				<li><a href="#">園所介紹</a></li>
+				<li><a href="#">校園生活</a></li>
+				<li><a href="#">校園訊息</a></li>
+			</ul>
+			<div class="logo">
+				<img src="img/logo.png" alt="">
+			</div>
+			<ul class="right">
+				<li><a href="#">校園花絮</a></li>
+				<li><a href="#">招生訊息</a></li>
+				<li><a href="#">聯絡我們</a></li>
+			</ul>
+		</nav>
+	</header>
+<!-- ST4 由上至下的文字與圖片排版 -->
+	<div class="banner">
+		<div class="banner-text">
+			
+			<h1>在孩子最需要的時候，精準地導引思考關鍵<br>擴展幼兒的生活經驗，點燃學習熱枕。</h1>
+			<br>
+			<h6>藉由各種活動來探索自我，看到自己的能力、肯定自我價值。
+			</h6>
+			<!-- <a href="#" class="scrolldown"><img src="images/arrow-down.png" alt=""></a> -->
+		</div>
+		<img class="slide-thumb" src="/img/childrenwhite.jfif" alt="">
+	</div>
+</div>
+
+    <!-- ST2 網站 https://cdnjs.com -->
+<!-- JQUERY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- ANIME JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+
+// ST8 上排選單可以跟著滾輪上下滑動
+$(function(){
+
+	$(window).scroll(function(){
+		var scroll = $(window).scrollTop();
+
+		if(scroll >= 10){
+			$("header").addClass("sticky");
+		} else {
+			$("header").removeClass("sticky");
+		}
+	});
+});
+// ST10 浮水印上下閉合
+anime({
+	targets:'.intro-slide',
+	scaleY:[1,0], /*css的 transform效果*//*https://animejs.com/documentation/#CSStransforms*/
+	duration:1500,
+	easing:'easeInOutSine'
+});
+// ST11 .banner內的物品慢一秒進入
+anime({
+	targets:'.banner',
+	opacity:[0,1],
+	duration:5000,
+	delay:1000,
+	easing:'easeInOutExpo'/*要使用的過渡效果的名稱*//*https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/264265/*/
+});
+// ST11 .logo內的物品慢一秒進入
+anime({
+	targets:'.logo',
+	opacity:{
+		value:[0,1],
+		// duration:2000,
+		delay:4000
+	},
+	translateY:{
+		value:[250,0],
+		// duration:2000,
+		delay:6000,
+	},
+	delay:4500,
+	easing:'easeInOutExpo'
+});
+// ST12 左右選單漫入+左右彈出
+anime({
+	targets:'.left li',
+	translateX:[200,0],
+	opacity:[0,1],
+	duration:3000,
+	delay: anime.stagger(200,{start:7000}), /*https://animejs.com/documentation/#staggeringBasics*/
+	easing:'easeInOutExpo'
+});
+
+anime({
+	targets:'.right li',
+	translateX:[-200,0],
+	opacity:[0,1],
+	duration:3000,
+	delay: anime.stagger(200,{start:7000}),
+	easing:'easeInOutExpo'
+});
+
+</script>
+</body>
+</html>
